@@ -22,12 +22,23 @@
 //        System.out.println(tv2.toStringOn());
 //        System.out.println(tv2.toStringOff());
 
-        Television my_television= new Television();
-//        String brand = brand_name;
-//        int volume = volume_state;
-        my_television.Television("Toshiba", 75);
-        my_television.Television("Samsung", 100);
-        my_television.Television("TCL", 0);
+        Television my_television1 = new Television("Vizio");
+        System.out.printf("%d television instances created%n", Television.getInstanceCount());
+//        my_television1.setBrand("TCL");
+        my_television1.setVolume(85);
+        System.out.println(my_television1.toStringOn());
+        my_television1.turnOff();
+
+        Television my_television2 = new Television("Toshiba", 125);
+        my_television2.turnOff();
+        System.out.printf("%d television instances created%n", Television.getInstanceCount());
+
+        Television my_television3 = new Television("LG", 99);
+        System.out.printf("%d television instances created%n", Television.getInstanceCount());
+
+//        my_television1.Television("Toshiba", 75);
+//        my_television1.Television("Samsung", 100);
+//        my_television1.Television("TCL", 0);
     }
 
 }
