@@ -10,6 +10,7 @@ public class Television{
   //Constructor with no arguments
   public Television(){
     instanceCount++;
+
   }
 
   //Constructor with one String argument
@@ -60,9 +61,14 @@ public class Television{
     }
 
   }
-
+// If using sitch we can do, brand.toLowerCase()
   public void setBrand(String brand) {
-    this.brand = brand;
+    if (brand.equalsIgnoreCase("Samsung") || brand.equalsIgnoreCase("LG") || brand.equalsIgnoreCase("Sony")){
+      this.brand = brand;}
+      else{
+      System.out.println("Invalid Brand, choose Samsung, LG, Sony");
+    }
+
   }
 
 
