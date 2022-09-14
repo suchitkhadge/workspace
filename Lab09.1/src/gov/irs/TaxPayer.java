@@ -8,6 +8,8 @@
 
 package gov.irs;
 
+import com.hr.personnel.HourlyEmployee;
+
 /**
  * An argument can be made that the tax rate constants are better defined
  * on the classes that use them, and not all lumped in here.
@@ -17,8 +19,15 @@ package gov.irs;
  *   If the IRS were to change tax rates, we would only need to change that here.
  */
 public interface TaxPayer {
-    public static final double HOURLY_TAX_RATE = 0.25;
-    public static final double SALARIED_TAX_RATE = 0.30;
+     double HOURLY_TAX_RATE = 0.25;
+     double SALARIED_TAX_RATE = 0.30;
     
     public void payTaxes();
+
+    default double getStandardDeduction(){
+        return 7500D;
+    }
+
+
+
 }
