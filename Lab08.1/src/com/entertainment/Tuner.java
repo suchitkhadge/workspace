@@ -31,7 +31,7 @@ class Tuner {
         goToStation();
     }
 
-    public String getChannel() {
+    public String getCurrentChannel() {
         return channel;
     }
 

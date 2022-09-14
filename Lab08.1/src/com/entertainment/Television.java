@@ -21,6 +21,7 @@ public class Television {
     public static final int MAX_VOLUME = 100;
     public static final String[] VALID_BRANDS = { "Samsung", "LG", "Sony", "Toshiba" };
 
+
     private static int instanceCount = 0;
 
     public static int getInstanceCount() {
@@ -32,6 +33,7 @@ public class Television {
     private String brand;
     private int volume;
     private DisplayType display = DisplayType.LED;
+    private final Tuner tuner = new Tuner();
 
     // CONSTRUCTORS - special methods that get called when the client says "new"
     public Television() {
@@ -57,6 +59,15 @@ public class Television {
     public void turnOn() {
         boolean isConnected = verifyInternetConnection();
         System.out.println("Turning on your " + brand + " television to volume " + volume);
+    }
+
+    public void changeChannel(String channel){
+        tuner.setChannel(channel);
+
+    }
+
+    public String getCurrentChannel(){
+        return tuner.getCurrentChannel();
     }
 
     public void turnOff() {
@@ -100,6 +111,7 @@ public class Television {
         this.display = display;
     }
 
+
     private static boolean isValidBrand(String brand) {
         boolean isValid = false;
 
@@ -121,6 +133,7 @@ public class Television {
         return "com.entertainment.Television" +
                 ": brand=" + getBrand() +
                 ", volume=" + getVolume() +
-                ", display=" + getDisplay();
+                ", display=" + getDisplay()+
+                ", channel=" +getCurrentChannel();
     }
 }

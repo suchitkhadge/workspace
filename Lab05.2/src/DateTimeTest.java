@@ -49,7 +49,7 @@ class DateTimeTest {
 
         Calendar  calendar = Calendar.getInstance();
         calendar.set(1991, 8, 27);
-        System.out.println(Calendar.DAY_OF_WEEK);
+
 
         // TODO: use of() to create a value representing the 1st lunar landing - it happened on 7/20/69 at 3:18pm Eastern Time.
         // NOTE: ignore time-zone, just assume Eastern Time is the local time.

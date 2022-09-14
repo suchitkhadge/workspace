@@ -23,12 +23,12 @@ class DerivedDateTimeTest {
      * To run one test method at a time, uncomment the call to the one you want to execute.
      */
     public static void main(String[] args) {
-        // testPresidentsFirst100Days();
-        // testPopularBirthdays();
-        // testEarlyRetirement();
-        // testLaborDay();
-        // testElectionDay();
-        // testAnniversary();
+         testPresidentsFirst100Days();
+         testPopularBirthdays();
+         testEarlyRetirement();
+         testLaborDay();
+         testElectionDay();
+         testAnniversary();
     }
 
     /**
@@ -39,6 +39,9 @@ class DerivedDateTimeTest {
      */
     public static void testPresidentsFirst100Days() {
         // TODO
+        LocalDate day100 = LocalDate.of(2017, 1, 20);
+        day100 = day100.plusDays(100);
+        System.out.println("President's 100 days: " + day100);
     }
 
     /**
@@ -50,10 +53,14 @@ class DerivedDateTimeTest {
      */
     public static void testPopularBirthdays() {
         // TODO: what is the average birthday of someone conceived on Valentine's Day?
-        LocalDate birthday = LocalDate.of(2022,1,1);
-        System.out.println(birthday.plusWeeks(38));
+        LocalDate birthday = LocalDate.of(2015,2,14);
+        System.out.println("Valentine's day 38 week conceive date: " + birthday.plusWeeks(38));
 
         // TODO: what is the average birthday of someone conceived on New Year's Eve (after midnight)?
+        LocalDate nye = LocalDate.of(2015, 1, 1);
+        LocalDate nyeBirth = nye.plusWeeks(38);
+        System.out.println("New Year conceive date " + nyeBirth);
+
     }
 
     /**
@@ -65,6 +72,9 @@ class DerivedDateTimeTest {
      */
     public static void testEarlyRetirement() {
         // TODO
+        LocalDate bday = LocalDate.of (1991, 8, 27);
+        LocalDate retire = bday.plusYears(59).plusMonths(6);
+        System.out.println("Retirement date is: " + retire);
     }
 
     /**
@@ -76,6 +86,9 @@ class DerivedDateTimeTest {
      */
     public static void testLaborDay() {
         // TODO
+        LocalDate laborday_birth = LocalDate.of(1991,8, 27 );
+        LocalDate laborday = laborday_birth.withMonth(9).with(firstInMonth(DayOfWeek.MONDAY));
+        System.out.println("Labor Day in 1991: " + laborday);
     }
 
     /**
@@ -86,6 +99,8 @@ class DerivedDateTimeTest {
      */
     public static void testElectionDay() {
         // TODO
+        LocalDate eDay = LocalDate.of(2024, 11,1);
+        LocalDate electionDay = eDay.with(firstInMonth(DayOfWeek.MONDAY)).with(next(DayOfWeek.TUESDAY));
     }
 
     /**
