@@ -37,8 +37,6 @@ public abstract class Employee {
         setHireDate(hireDate);
     }
 
-
-
     // business methods
     public void work() {
         System.out.println(getName() + " working hard since " + getHireDate());
